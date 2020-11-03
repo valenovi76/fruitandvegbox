@@ -3,6 +3,11 @@ html{
 
 }
 
+.container-fluid{
+    background-color: #09AE78;
+
+};
+
 body{
     background :url('/media/homepage_background.jpg') no-repeat center center fixed;
     background-size: cover;
