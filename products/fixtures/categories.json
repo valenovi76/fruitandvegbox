@@ -3,38 +3,38 @@
     "pk": 1,
     "model": "products.category",
     "fields":{
-                "name": "Fruit",
-                "friendly_name": "Fruit"
+            "name": "Fruit",
+            "friendly_name": "Fruit"
     }
   },
   {
     "pk": 2,
     "model": "products.category",
-    "fields": {
-                "name": "Vegetable",
-                "friendly_name": "Vegetable"
+    "fields":{
+            "name": "Vegetable",
+            "friendly_name": "Vegetable"
     }
   },
   {
     "pk": 3,
     "model": "products.category",
-    "fields": {
-                "name": "Mixed_Box",
-                "friendly_name": "Mixed Box"
-    }            
+    "fields":{
+            "name": "Mixed_Box",
+            "friendly_name": "Mixed Box"
+    }
   },
   {
     "pk": 4,
     "model": "products.category",
-    "fields": {
-                "name": "Fruit_Box",
-                "friendly_name": "Fruit Only Box"
+    "fields":{
+            "name": "Fruit_Box",
+            "friendly_name": "Fruit Only Box"
     }
   },
   {
     "pk": 5,
     "model": "products.category",
-    "fields": {
+    "fields":{
             "name": "Veg_Box",
             "friendly_name": "Vegetable Only Box"
     }
