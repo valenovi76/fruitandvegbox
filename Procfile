@@ -1,1 +1,1 @@
-web: gunicorn boutique_ado.wsgi:application --bind 0.0.0.0:${PORT}
+web: gunicorn vegnfruit.wsgi:application --bind 0.0.0.0:${PORT}
