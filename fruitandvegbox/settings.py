@@ -121,18 +121,25 @@ WSGI_APPLICATION = 'fruitandvegbox.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }   
+
+#DATABASES = {
+#    'default': dj_database_url.parse('postgres://hnwqnafzdjjtit:cd3f7f5372f4e54d125e3dc02a6b2dcac60925587c33e44b9d2557d0611f0f67@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/dq6ngmmjo99p')
+#}
+
+
+#if 'DATABASE_URL' in os.environ:
+DATABASES = {
+   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+#else:
+
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#        }
+#    }   
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
