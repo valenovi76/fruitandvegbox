@@ -1,9 +1,14 @@
 from django import forms
+from crispy_forms.helper import FormHelper
 
 from .models import NewsletterUser
 
 
 class NewsletterUserSignUpForm(forms.ModelForm):
+    helper = FormHelper()
+    helper.form_show_lebels = False
+
+
     class Meta:
         model = NewsletterUser
         fields = ['email']

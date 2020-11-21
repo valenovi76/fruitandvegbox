@@ -1,7 +1,7 @@
-from django.urls import path
-from . import views
+from django.conf.urls import url
+from .views import newsletter_signup, newsletter_unsubscribe
 
 urlpatterns = [
-    path('', views.newsletter_signup, name='newsletter_signup'),
-    path('', views.newsletter_unsuscribe, name='newsletter_unsuscribe'),
+    url(r'signup/$', newsletter_signup, name='newsletter_signup'),
+    url(r'unsubscribe/$', newsletter_unsubscribe, name='newsletter_unsubscribe'),
 ]
