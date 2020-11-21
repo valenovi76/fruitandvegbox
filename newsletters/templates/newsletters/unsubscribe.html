@@ -13,31 +13,36 @@
 {% endblock %}
 
 
+
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-6 col-lg-offset-3">
                 <hr>
-                    <h2 class="logo-font mb-4">Unsubscribe from Our Newslettter</h2>
+                    <h2 class="logo-font mb-4">Unsubscribe From Our Newslettter</h2>
                 <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-muted"></p>
+                {% if messages %}
+                    {% for message in messages %}
+                         <div {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                             {{ message }}
+                        </div>   
+                    {% endfor%}
+                {% else %}    
                     <form method="POST">{% csrf_token %}
                         <div class ="input-group">
-                        {{ form }}
+                        {{ form|crispy }}
                             <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"> Unsubscribe</button>
+                            <button class="btn btn-default" type="submit">Unsubscribe</button>
                             </span>
                         </div>
                     </form>
+                {% endif %}
             </div>
             
         </div>
     </div>
+    
 
 {% endblock %}
-

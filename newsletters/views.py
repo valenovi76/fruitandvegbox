@@ -1,5 +1,8 @@
+from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import render
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import get_template
 
 from .models import NewsletterUser
 from .forms import NewsletterUserSignUpForm
@@ -20,6 +23,18 @@ def newsletter_signup(request):
             messages.success(request,
                              "Your emails has been submitted successfully",
                              "alert alert-success alert-dismissible")
+            subject = "Thank you for joining our Newsletter"
+            from_email = settings.EMAIL_HOST_USER
+            to_email = [instance.email]
+            with open(settings.BASE_DIR + "/newsletters/templates/newsletters/sign_up_email.txt") as f:
+                signup_message = f.read()
+            message = EmailMultiAlternatives(subject=subject,
+                                             body=signup_message,
+                                             from_email=from_email,
+                                             to=to_email)
+            html_template = get_template("newsletters/sign_up_email.html").render()
+            message.attach_alternative(html_template, "text/html")
+            message.send()
 
     context = {
         'form': form,
@@ -38,6 +53,20 @@ def newsletter_unsubscribe(request):
             messages.success(request,
                              "Your email has been removed",
                              "alert alert-sucess alert-dismissible")
+            subject = "You have been unsuscribed our Newsletter"
+            from_email = settings.EMAIL_HOST_USER
+            to_email = [instance.email]
+            with open(settings.BASE_DIR + "/newsletters/templates/newsletters/unsubscribe_email.txt") as f:
+                signup_message = f.read()
+            message = EmailMultiAlternatives(subject=subject,
+                                             body=signup_message,
+                                             from_email=from_email,
+                                             to=to_email)
+            html_template = get_template("newsletters/unsubscribe_email.html").render()
+            message.attach_alternative(html_template, "text/html")
+            message.send()
+
+
         else:
             messages.warning(request,
                              "Sorry we did not find your email address in our record",
