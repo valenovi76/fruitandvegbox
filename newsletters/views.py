@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import get_template
 
-from .models import NewsletterUser
-from .forms import NewsletterUserSignUpForm
+from .models import NewsletterUser, Newsletter
+from .forms import NewsletterUserSignUpForm, NewsletterCreationForm
 # Create your views here.
 
 
@@ -77,3 +77,7 @@ def newsletter_unsubscribe(request):
     }
     template = "newsletters/unsubscribe.html"
     return render(request, template, context)
+
+
+def control_newsletter(request):
+    form = NewsletterCreationForm(request.POST or None)
