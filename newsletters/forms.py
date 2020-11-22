@@ -1,13 +1,12 @@
 from django import forms
 from crispy_forms.helper import FormHelper
 
-from .models import NewsletterUser
+from .models import NewsletterUser, Newsletter
 
 
 class NewsletterUserSignUpForm(forms.ModelForm):
     helper = FormHelper()
     helper.form_show_lebels = False
-
 
     class Meta:
         model = NewsletterUser
@@ -18,3 +17,9 @@ class NewsletterUserSignUpForm(forms.ModelForm):
 
             return email
 
+
+class NewsletterCreationForm(forms.ModelForm):
+
+    class Meta:
+        model = Newsletter
+        fields = ['subject', 'body', 'email', 'status']
