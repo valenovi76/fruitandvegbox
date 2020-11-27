@@ -7,8 +7,8 @@
             "price": 3.30,
             "qty": "500 gr",
             "description": "",
-            "category": 1,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Apple.jpg",
+            "category": 1,"image_url": "/media/Apple.jpg",
+            
             "image": "Apple.jpg"
     }
   },
@@ -21,7 +21,7 @@
         "qty": "1 bunch",
         "description": "",
         "category": 2,
-        "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Beetroot.jpg",
+        "image_url": "/media/Beetroot.jpg",
         "image": "Beetroot.jpg"
     }
   },
@@ -34,7 +34,7 @@
             "qty": "1 Kg",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Broccolo.jpg",
+            "image_url": "/media/Broccolo.jpg",
             "image": "Broccolo.jpg"
     }
   },
@@ -47,7 +47,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Cabbage.jpg",
+            "image_url": "/media/Cabbage.jpg",
             "image": "Cabbage.jpg"
     }
   },
@@ -60,7 +60,7 @@
             "qty": "1 bunch",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Carrot.jpg",
+            "image_url": "/media/Carrot.jpg",
             "image": "Carrot.jpg"
     }
   },
@@ -73,7 +73,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Cauliflower.jpg",
+            "image_url": "/media/Cauliflower.jpg",
             "image": "Cauliflower.jpg"
     }
   },
@@ -86,7 +86,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Celeriac.jpg",
+            "image_url": "/media/Celeriac.jpg",
             "image": "Celeriac.jpg"
     }
   },
@@ -99,7 +99,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Celery.jpg",
+            "image_url": "/media/Celery.jpg",
             "image": "Celery.jpg"
     }
   },
@@ -112,7 +112,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Cucumber.jpg",
+            "image_url": "/media/Cucumber.jpg",
             "image": "Cucumber.jpg"
     }
   },
@@ -125,7 +125,7 @@
             "qty": "1 bunch",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Garlic.jpg",
+            "image_url": "/media/Garlic.jpg",
             "image": "Garlic.jpg"
     }
   },
@@ -138,7 +138,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Leek.jpg",
+            "image_url": "/media/Leek.jpg",
             "image": "Leek.jpg"
     }
   },
@@ -151,7 +151,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Lettuce.jpg",
+            "image_url": "/media/Lettuce.jpg",
             "image": "Lettuce.jpg"
     }
   },
@@ -164,7 +164,7 @@
             "qty": "1 Kg",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Onion.jpg",
+            "image_url": "/media/Onion.jpg",
             "image": "Onion.jpg"
     }
   },
@@ -177,7 +177,7 @@
             "qty": "1 Kg",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Parsnip.jpg",
+            "image_url": "/media/Parsnip.jpg",
             "image": "Parsnip.jpg"
     }
   },
@@ -190,7 +190,7 @@
             "qty": "500 gr",
             "description": "",
             "category": 1,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Pear.jpg",
+            "image_url": "/media/Pear.jpg",
             "image": "Pear.jpg"
     }
   },
@@ -203,7 +203,7 @@
             "qty": "1 Kg",
             "description": "",
             "category": 1,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Plum.jpg",
+            "image_url": "/media/Plum.jpg",
             "image": "Plum.jpg"
     }
   },
@@ -216,7 +216,7 @@
             "qty": "1 Kg",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Potato.jpg",
+            "image_url": "/media/Potato.jpg",
             "image": "Potato.jpg"
     }
   },
@@ -229,7 +229,7 @@
             "qty": "each",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Pumpkin.jpg",
+            "image_url": "/media/Pumpkin.jpg",
             "image": "Pumpkin.jpg"
     }
   },
@@ -242,7 +242,7 @@
             "qty": "500 gr",
             "description": "",
             "category": 2,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Spinach.jpg",
+            "image_url": "/media/Spinach.jpg",
             "image": "Spinach.jpg"
     }
   },
@@ -255,7 +255,7 @@
             "qty": "500 gr",
             "description": "",
             "category": 1,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Strawberry.jpg",
+            "image_url": "/media/Strawberry.jpg",
             "image": "Strawberry.jpg"
     }
   },
@@ -268,7 +268,7 @@
             "qty": "varies each week",
             "description": "Mixed box of fruit and vegetables in season, sourced locally",
             "category": 3,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/fruit_and_veg_box.JPG",
+            "image_url": "/media/fruit_and_veg_box.JPG",
             "image": "fruit_and_veg_box.jpg"
     }
   },
@@ -281,7 +281,7 @@
             "qty": "varies each week",
             "description": "Mixed box of fruit  in season, sourced locally",
             "category": 4,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Fruit_Box.JPG",
+            "image_url": "/media/Fruit_Box.JPG",
             "image": "Fruit_Box.jpg"
     }
   },
@@ -294,7 +294,7 @@
             "qty": "varies each week",
             "description": "Mixed box of  vegetables in season, sourced locally",
             "category": 5,
-            "image_url": "https://github.com/valenovi76/fruitandvegbox/blob/9b4c01befb395c68572152e3a65385c6788d1a91/media/Veg_box.JPG",
+            "image_url": "/media/Veg_box.JPG",
             "image": "Veg_box.jg"
     }
   }

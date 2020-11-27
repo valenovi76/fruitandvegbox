@@ -80,16 +80,26 @@ def newsletter_unsubscribe(request):
     return render(request, template, context)
 
 
+@login_required
 def control_newsletter(request):
+    """ A view to create a new Newsletter """
+#    if not request.user.is_superuser:
+#        messages.error(request, 'Sorry, only store owners can do that.')
+#        return redirect(reverse('home'))
+
     form = NewsletterCreationForm(request.POST or None)
 
     if form.is_valid():
+
         instance = form.save()
         newsletter = Newsletter.objects.get(id=instance.id)
+        messages.success(request, 'Successfully saved Newsletter')
+
         if newsletter.status == "Published":
             subject = newsletter.subject
             body = newsletter.body
             from_email = settings.EMAIL_HOST_USER
+            """loop to go through all the emails selected on the form, rather than sending a mass email"""
             for email in newsletter.email.all():
                 send_mail(subject=subject, from_email=from_email,
                           recipient_list=[email], message=body,
@@ -102,7 +112,13 @@ def control_newsletter(request):
     return render(request, template, context)
 
 
+@login_required
 def control_newsletter_list(request):
+    """ A view to show the list of Newsletters """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     newsletters = Newsletter.objects.all()
 
     paginator = Paginator(newsletters, 1)
@@ -129,8 +145,13 @@ def control_newsletter_list(request):
     return render(request, template, context)
 
 
+@login_required
 def control_newsletter_detail(request, newsletter_id):
     """ A view to show individual Newsletters """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     newsletter = get_object_or_404(Newsletter, pk=newsletter_id)
 
     context = {
@@ -140,7 +161,13 @@ def control_newsletter_detail(request, newsletter_id):
     return render(request, template, context)
 
 
+@login_required
 def control_newsletter_edit(request, newsletter_id):
+    """"Edit Newsletter if you are admin"""
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     newsletter = get_object_or_404(Newsletter, pk=newsletter_id)
 
     if request.method == 'POST':
