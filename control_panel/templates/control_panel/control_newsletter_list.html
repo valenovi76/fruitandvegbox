@@ -25,18 +25,18 @@
             <tbody>
                 {% for item in items%}
                     <tr>
-                        <td>{{item.subject}}</td>
+                        <td><a href="{% url 'control_newsletter_detail' item.id%}">{{item.subject}}</a></td>
                         <td>{{item.status}}</td>
                         <td>{{item.created}}</td>
                         <td>{{item.updated}}</td>
-                        <td><a href="#">Edit</a></td>
-                        <td><a href="#">Delete</a></td>
+                        <td><a href="{% url 'control_newsletter_edit' item.id %}">Edit</a></td>
+                        <td><a href="{% url 'control_newsletter_delete' item.id %}">Delete</a></td>
                     </tr>
 
                 {%endfor%}
             </tbody>
         </table>
     </div>
-    {% include ".pagination.html"%}
+    {% include 'pagination.html'%}
 </div>
 {% endblock %}
