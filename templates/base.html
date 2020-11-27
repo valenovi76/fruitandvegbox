@@ -33,6 +33,7 @@
     {% endblock %}
 
     {% block extra_js %}
+
     {% endblock %}
 
     <title>Vegetable and Fruit In A Box Shop {% block extra_title %}{% endblock %}</title>
@@ -40,8 +41,10 @@
   <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <img src="media/Logo.jpg" alt="" class="logo-style">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link" >
                     <h2 class="logo-font text-black my-0">Vegetables and Fruit in a Box</h2>
                 </a>
             </div>
@@ -72,9 +75,11 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'control_newsletter_list' %}" class="dropdown-item">Newsletter Admin</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -97,6 +102,7 @@
                     </li>
                 </ul>
             </div>
+        
         </div>
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
