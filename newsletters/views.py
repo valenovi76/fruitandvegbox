@@ -121,7 +121,7 @@ def control_newsletter_list(request):
 
     newsletters = Newsletter.objects.all()
 
-    paginator = Paginator(newsletters, 1)
+    paginator = Paginator(newsletters, 3)
     page = request.GET.get('page')
 
     try:

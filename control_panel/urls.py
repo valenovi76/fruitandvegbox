@@ -15,4 +15,4 @@ urlpatterns = [
          views.control_newsletter_delete,
          name='control_newsletter_delete'),
 ]
-
+ 
