@@ -20,7 +20,8 @@
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3">
                 <hr>
-                    <h2 class="logo-font mb-4">SIgn Up for Our Newslettter</h2>
+                    <h2 class="logo-font mb-4">Sign Up for Our Newslettter</h2>
+                    <p>Join our subscribers list to get the latest news, updates and special offers delivered directly in your inbox.</p>
                 <hr>
                 {% if messages %}
                     {% for message in messages %}
@@ -32,9 +33,9 @@
                 {% else %}    
                     <form method="POST">{% csrf_token %}
                         <div class ="input-group">
-                        {{ form|crispy }}
+                        {% crispy form %}
                             <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"> Subscribe</button>
+                            <button class="btn btn-default btn-black" type="submit"> Subscribe</button>
                             </span>
                         </div>
                     </form>

@@ -18,8 +18,8 @@ def newsletter_signup(request):
         instance = form.save(commit=False)
         if NewsletterUser.objects.filter(email=instance.email).exists():
             messages.warning(request,
-                             'Your Email Already Exists in our Records',
-                             "alert alert-warning alert-dismissible")
+                             'Your Email Already Exists in our Records')
+                            # "alert alert-warning alert-dismissible")
         else:
             instance.save()
             messages.success(request,
@@ -83,27 +83,21 @@ def newsletter_unsubscribe(request):
 @login_required
 def control_newsletter(request):
     """ A view to create a new Newsletter """
-#    if not request.user.is_superuser:
-#        messages.error(request, 'Sorry, only store owners can do that.')
-#        return redirect(reverse('home'))
 
-    form = NewsletterCreationForm(request.POST or None)
+    form = NewsletterCreationForm(request.POST, request.FILES)
 
     if form.is_valid():
-
         instance = form.save()
         newsletter = Newsletter.objects.get(id=instance.id)
-        messages.success(request, 'Successfully saved Newsletter')
-
         if newsletter.status == "Published":
             subject = newsletter.subject
             body = newsletter.body
             from_email = settings.EMAIL_HOST_USER
-            """loop to go through all the emails selected on the form, rather than sending a mass email"""
-            for email in newsletter.email.all():
+            for email in newsletter.el.all():
                 send_mail(subject=subject, from_email=from_email,
-                          recipient_list=[email], message=body,
-                          fail_silently=True)
+                          recipient_list=[email],
+                          message=body, fail_silently=True)
+                messages.success(request, 'Successfully sent Newsletter')
 
     context = {
         "form": form,
@@ -115,9 +109,6 @@ def control_newsletter(request):
 @login_required
 def control_newsletter_list(request):
     """ A view to show the list of Newsletters """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
 
     newsletters = Newsletter.objects.all()
 
@@ -147,10 +138,7 @@ def control_newsletter_list(request):
 
 @login_required
 def control_newsletter_detail(request, newsletter_id):
-    """ A view to show individual Newsletters """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+    """ A view to view without editing individual Newsletters """
 
     newsletter = get_object_or_404(Newsletter, pk=newsletter_id)
 
@@ -164,17 +152,14 @@ def control_newsletter_detail(request, newsletter_id):
 @login_required
 def control_newsletter_edit(request, newsletter_id):
     """"Edit Newsletter if you are admin"""
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
 
     newsletter = get_object_or_404(Newsletter, pk=newsletter_id)
 
     if request.method == 'POST':
-        form = NewsletterCreationForm(request.POST, instance=newsletter)
+        form = NewsletterCreationForm(request.POST, request.FILES,instance=newsletter)
 
         if form.is_valid():
-            newsletter = form.save()
+            form.save()
 
             if newsletter.status == "Published":
                 subject = newsletter.subject
@@ -184,29 +169,26 @@ def control_newsletter_edit(request, newsletter_id):
                     send_mail(subject=subject, from_email=from_email,
                               recipient_list=[email], message=body,
                               fail_silently=True)
-            return redirect('control_panel:control_newsletter_detail',
-                            pk=newsletter.id)
 
+            return redirect(reverse('control_newsletter_detail', args=[newsletter.id]))
     else:
         form = NewsletterCreationForm(instance=newsletter)
 
     context = {
         "form": form,
+        "newsletter" : newsletter,
     }
 
-    template = 'control_panel/control_newsletter.html'
+    template = 'control_panel/control_newsletter_edit.html'
 
     return render(request, template, context)
 
 
 @login_required
 def control_newsletter_delete(request, newsletter_id):
-    """ Delete a product from the store """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
+    """ Delete a newsletter the store """
 
     newsletter = get_object_or_404(Newsletter, pk=newsletter_id)
     newsletter.delete()
     messages.success(request, 'Newsletter deleted!')
-    return redirect(reverse('control_panel/control_newsletter_list'))
+    return redirect(reverse('control_newsletter_list'))

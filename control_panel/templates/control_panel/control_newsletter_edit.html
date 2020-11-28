@@ -17,7 +17,7 @@
             <div class="col-12 col-md-6">
                 <hr>
                 <h2 class="logo-font mb-4">Newsletter Management</h2>
-                <h5 class="text-muted"> Newsletter " {{ newsletter.subject }} " Details</h5>
+                <h5 class="text-muted"> Newsletter  {{ newsletter.subject }} for editing</h5>
                 <hr>
             </div>
         </div>
@@ -32,7 +32,7 @@
             
              <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'control_newsletter_list' %}">Back to List</a>
-                        <a class="text-danger" href="{% url 'control_newsletter_delete' newsletter.id %}">Delete</a>
+                        <button class="btn btn-black rounded-0" type="submit">Update Newsletter</button>
                            
             </div>
             

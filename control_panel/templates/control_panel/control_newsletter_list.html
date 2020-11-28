@@ -29,18 +29,21 @@
                     <th>Status</th>
                     <th>Created</th>
                     <th>Updated</th>
+                    <th>Preview</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
                 <tbody>
                     {% for item in items%}
                         <tr>
-                            <td><a href="{% url 'control_newsletter_detail' item.id%}">{{item.subject}}</a></td>
+                            <td>{{item.subject}}</td>
                             <td>{{item.status}}</td>
                             <td>{{item.created}}</td>
                             <td>{{item.updated}}</td>
+                            <td><a href="{% url 'control_newsletter_detail' item.id %}">Preview</a></td>
                             <td><a href="{% url 'control_newsletter_edit' item.id %}">Edit</a></td>
-                            <td><a href="{% url 'control_newsletter_delete' item.id %}">Delete</a></td>
+                            <td><a class="text-danger" href="{% url 'control_newsletter_delete' item.id %}">Delete</a></td>
+
                         </tr>
 
                     {%endfor%}
@@ -50,6 +53,10 @@
                 <div class= "col-sm-2">
             <a href="{% url 'control_newsletter' %}"><button type="button" class="btn btn-success">New Newsletter</button></a>
         </div>
+    </div>
+    <div class="col-sm-2">
     {% include 'pagination.html'%}
+    </div>
+    
 </div>
 {% endblock %}
