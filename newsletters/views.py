@@ -88,7 +88,7 @@ def control_newsletter(request):
 
     if form.is_valid():
         instance = form.save()
-      #  messages.success(request, 'Successfully Created Newsletter')
+        messages.success(request, 'Successfully Created Newsletter')
         newsletter = Newsletter.objects.get(id=instance.id)
         if newsletter.status == "Published":
             subject = newsletter.subject
@@ -98,7 +98,7 @@ def control_newsletter(request):
                 send_mail(subject=subject, from_email=from_email,
                           recipient_list=[email],
                           message=body, fail_silently=True)
-                #messages.success(request, 'Successfully sent Newsletter')
+                messages.success(request, 'Successfully sent Newsletter')
 
     context = {
         "form": form,
