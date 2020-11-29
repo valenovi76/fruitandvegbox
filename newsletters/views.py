@@ -88,16 +88,17 @@ def control_newsletter(request):
 
     if form.is_valid():
         instance = form.save()
+      #  messages.success(request, 'Successfully Created Newsletter')
         newsletter = Newsletter.objects.get(id=instance.id)
         if newsletter.status == "Published":
             subject = newsletter.subject
             body = newsletter.body
             from_email = settings.EMAIL_HOST_USER
-            for email in newsletter.el.all():
+            for email in newsletter.email.all():
                 send_mail(subject=subject, from_email=from_email,
                           recipient_list=[email],
                           message=body, fail_silently=True)
-                messages.success(request, 'Successfully sent Newsletter')
+                #messages.success(request, 'Successfully sent Newsletter')
 
     context = {
         "form": form,
@@ -160,7 +161,7 @@ def control_newsletter_edit(request, newsletter_id):
 
         if form.is_valid():
             form.save()
-
+            messages.success(request, 'Successfully Updated Newsletter')
             if newsletter.status == "Published":
                 subject = newsletter.subject
                 body = newsletter.body

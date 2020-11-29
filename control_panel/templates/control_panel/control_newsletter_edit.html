@@ -13,34 +13,27 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Newsletter Management</h2>
-                <h5 class="text-muted"> Newsletter  {{ newsletter.subject }} for editing</h5>
-                <hr>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <hr>
+                    <h2 class="logo-font mb-4">Newsletter Management</h2>
+                    <h5 class="text-muted"> Newsletter  {{ newsletter.subject }} for editing</h5>
+                    <hr>
+                </div>
             </div>
-        </div>
  
-
-             <form method ="POST">{% csrf_token %}
-                        {{form|crispy}}
-                    {{ newsletter.body }}    
-                        <div class="text-right">
-
-                        </div>
-            
-             <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'control_newsletter_list' %}">Back to List</a>
-                        <button class="btn btn-black rounded-0" type="submit">Update Newsletter</button>
-                           
+            <div class="row">
+            <div class="col-12 col-md-6">
+                <form method ="POST" action="{% url 'control_newsletter_edit' newsletter.id %}" class="form mb-2" enctype="multipart/form-data">{% csrf_token %}
+                            {{form|crispy}}
+                            {{ newsletter.body }}   
+                    <div class="text-right">
+                                <a class="btn btn-outline-black rounded-0" href="{% url 'control_newsletter_list' %}">Back to List</a>
+                                <button class="btn btn-black rounded-0" type="submit">Update Newsletter</button>                          
+                    </div>
+                </form>
             </div>
-            
-            
-            
-            </form>
-
-
+            </div>
 
     </div>
 
