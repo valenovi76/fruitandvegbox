@@ -23,8 +23,8 @@ def newsletter_signup(request):
         else:
             instance.save()
             messages.success(request,
-                             "Your emails has been submitted successfully",
-                             "alert alert-success alert-dismissible")
+                             "Your emails has been successfully added to our newsletter")
+                             #"alert alert-success alert-dismissible")
             subject = "Thank you for joining our Newsletter"
             from_email = settings.EMAIL_HOST_USER
             to_email = [instance.email]
@@ -53,8 +53,8 @@ def newsletter_unsubscribe(request):
         if NewsletterUser.objects.filter(email=instance.email).exists():
             NewsletterUser.objects.filter(email=instance.email).delete()
             messages.success(request,
-                             "Your email has been removed",
-                             "alert alert-sucess alert-dismissible")
+                             "Your email has been removed, sorry see you go")
+                            # "alert alert-sucess alert-dismissible")
             subject = "You have been unsuscribed our Newsletter"
             from_email = settings.EMAIL_HOST_USER
             to_email = [instance.email]
@@ -70,8 +70,8 @@ def newsletter_unsubscribe(request):
 
         else:
             messages.warning(request,
-                             "Sorry we did not find your email address in our record",
-                             "alert alert-warning alert-dismissible")
+                             "Sorry we did not find your email address in our record")
+                             #"alert alert-warning alert-dismissible")
 
     context = {
         'form': form,

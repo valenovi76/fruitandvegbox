@@ -46,6 +46,7 @@ img{
 .btn-black {
     background: black;
     color: white;
+    border-radius: 0rem;
 }
 
 .btn-outline-black {
@@ -343,4 +344,9 @@ input[name='q']::placeholder {
 .table .thead th {
     color: #6c757d!important;
     border-color: #454d55;
+}
+
+/*Subscribe and Unsuscribe forms */
+.emailinput {
+    border-radius: 0rem;
 }

@@ -21,6 +21,7 @@
             <div class="col-lg-6 col-lg-offset-3">
                 <hr>
                     <h2 class="logo-font mb-4">Unsubscribe From Our Newslettter</h2>
+                    <h5 class= "text-muted">We are sad to see you going, please let us know if there was anything amiss with our service</h5>
                 <hr>
                 {% if messages %}
                     {% for message in messages %}
@@ -30,13 +31,15 @@
                         </div>   
                     {% endfor%}
                 {% else %}    
-                    <form method="POST">{% csrf_token %}
-                        <div class ="input-group">
-                        {{ form|crispy }}
-                            <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Unsubscribe</button>
-                            </span>
-                        </div>
+                    <form class="form-inline" method="POST">{% csrf_token %}
+                        <div class="form-group mb-2">
+                            <div class ="input-group">
+                            {{ form|crispy }}
+                            <div class="form-group mx-sm-3 mb-2">
+                                <button class="btn btn-black " type="submit">Unsubscribe</button>
+                            </div>
+                            </div>
+                        </div> 
                     </form>
                 {% endif %}
             </div>

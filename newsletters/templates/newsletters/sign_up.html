@@ -31,13 +31,15 @@
                         </div>   
                     {% endfor%}
                 {% else %}    
-                    <form method="POST">{% csrf_token %}
-                        <div class ="input-group">
-                        {% crispy form %}
-                            <span class="input-group-btn">
-                            <button class="btn btn-default btn-black" type="submit"> Subscribe</button>
-                            </span>
-                        </div>
+                     <form class="form-inline" method="POST">{% csrf_token %}
+                        <div class="form-group mb-2">
+                            <div class ="input-group">
+                            {{ form|crispy }}
+                            <div class="form-group mx-sm-3 mb-2">
+                                <button class="btn btn-black " type="submit">Subscribe</button>
+                            </div>
+                            </div>
+                        </div> 
                     </form>
                 {% endif %}
             </div>
