@@ -16,6 +16,10 @@ img{
 
 }
 
+#topnav{
+    display: flex;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -112,9 +116,7 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 /* newlsetter Signup */
-.requiredField{
-    display: none;
-}
+
 /* -Toasts */
 
 .message-container {
