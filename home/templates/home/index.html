@@ -14,44 +14,44 @@
 {% endblock %}
 
 {% block content %}
-
-<section class="jumbotron text-center">
-    <div class="container">
-      <h1>Shop with us</h1>
-      <p class="lead text-muted">All our products are sourced locally</p>
-      <p>
-      <div class="my-5">
+    <div class="container  h-100">
+        <div class="row h-100">
+            <div class="col-7 col-md-6 my-auto">
+                <h3 class="display-4 logo-font text-white">
+                    All our products are locally sourced and in season
+                </h3>
+                <div class="my-5">
                     <h4>
                         <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>                        
                     </h4>
                 </div>
-        <a href="{% url 'newsletter_signup' %}" class="btn btn-light rounded-0 my-2">Subscribe to our Newsletter</a>
-        <a href="{% url 'newsletter_unsubscribe' %}" class="btn btn-light rounded-0 my-2">Unsubscribe from our Newsletter</a>
-      </p>
-    </div>
-  </section>
-
-    <div class ="container text-center uppercase">
-    <h2> See what's in season now!"</h2>
-    </div>
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-      {% for item in season %}
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem; margin:15px">
-            <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
-            <div class="card-body">
-                <h3 class="card-title">{{item.name}}</h3>
-                <p class="card-text">{{item.description}}</p>
-                <a href="{% url 'product_detail' item.id %}"class="btn btn-black"> Order Product</a>
-            </div>
+                <div class= "my-5">
+                    <h3>
+                        <a href="{% url 'newsletter_signup' %}" class="newsletter-signup-button btn btn-light btn-sm rounded-0  py-3">Signup to our Newsletter</a>
+                        <a href="{% url 'newsletter_unsubscribe' %}" class="newsletter-signup-button btn btn-light btn-sm rounded-0  py-3">Unsuscribe from our Newsletter</a>
+                    </h3>
+                </div>
             </div>
         </div>
-      {% endfor%}
-      </div>
-    </div>
-  </div>    
 
+        <div class="row">
+        {% for item in season %}
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card mb-4 shadow-sm">
+                <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+                <div class="card-body">
+                <p class="card-text">{{item.name}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    <a href="{% url 'product_detail' item.id %}"> <button type="button" class="btn btn-black">Order Product</button></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        {% endfor%}
+        </div>
+
+
+</div>
 {% endblock %}

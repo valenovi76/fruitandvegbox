@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div class="collapse navbar-collapse" id="main-navb">
+<div class="collapse navbar-collapse" id="main-nav">
 <ul class="navbar-nav w-auto mx-auto " list-style-type="none">
     <li class="nav-item d-block d-md-none">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home'%}" id="home-link"> 
@@ -30,10 +30,7 @@
     <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"id="all-products-link" data-toggle="dropdown" aria-haspop="true" aria-expanded="false">
             Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?deal=True" class="dropdown-item">Offers</a>
-            </div>    
+            </a>  
     </li>
     </ul>
 </div>
