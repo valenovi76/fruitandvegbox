@@ -14,10 +14,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container  h-100">
+    <div class="container  h-100 m-46 landing-pic">
         <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h3 class="display-4 logo-font text-white">
+            <div class="col-12 col-md-6 my-auto">
+                <h3 class="display-4 logo-font text-black fader">
                     All our products are locally sourced and in season
                 </h3>
                 <div class="my-5">
@@ -27,8 +27,7 @@
                 </div>
                 <div class= "my-5">
                     <h3>
-                        <a href="{% url 'newsletter_signup' %}" class="newsletter-signup-button btn btn-light btn-sm rounded-0  py-3">Signup to our Newsletter</a>
-                        <a href="{% url 'newsletter_unsubscribe' %}" class="newsletter-signup-button btn btn-light btn-sm rounded-0  py-3">Unsuscribe from our Newsletter</a>
+                        <a href="{% url 'newsletter_signup' %}" class="newsletter-signup-button btn btn-light btn-sm rounded-0 btn-outline-dark py-3">Signup to our Newsletter</a>
                     </h3>
                 </div>
             </div>
