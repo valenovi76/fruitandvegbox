@@ -24,7 +24,15 @@ img{
      background: url('/media/homepage_background.jpg') no-repeat center top;
      background-size: contain;
 }
+.productsplash{
+    background: url('/media/garlic_splash.jpg') no-repeat right top;
+    background-size: contain;
+}
 
+.news-splash{
+    background: url('/media/onions_splash.jpg') no-repeat right top;
+    background-size: contain;  
+}
 .fader {
     background-color: rgba(255,255,255,0.2);
     padding: 20px 0;

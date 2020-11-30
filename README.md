@@ -107,7 +107,7 @@ The logo has been created by me using [Canva](https://www.canva.com/) and it has
 
 
 
-### Wireframes
+#### Wireframes
 
 Wireframing for this project has been done using [Balsamiq.cloud](https://balsamiq.cloud)
 
@@ -129,7 +129,7 @@ The navbar uses Bootstrap and the jQuery & Popper.js library to ensure it stays 
    <details>
    <summary>Template Wireframes</summary>
    </details>
-
+    
 ***
 
  * Home (Index) Page:
