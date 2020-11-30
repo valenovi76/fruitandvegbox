@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class ="container text-center uppercase">
+    <h2> These are our current offers</h2>
+    </div>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+      {% for item in deal %}
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem; margin:15px">
+            <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+            <div class="card-body">
+                <h3 class="card-title">{{item.name}}</h3>
+                <p class="card-text">{{item.description}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        </div>
+      {% endfor%}
+      </div>
+    </div>
+  </div>    
+
+{% endblock %}

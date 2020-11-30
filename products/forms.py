@@ -7,8 +7,9 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product
-        fields = '__all__'
-
+        fields = ['category', 'sku', 'name', 'description',
+                  'has_sizes', 'qty', 'price', 'seasonal',
+                  'deal', 'image_url', 'image']
     image = forms.ImageField(label='Image',
                              required=False, widget=CustomClearableFileInput)
 

@@ -141,3 +141,10 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+def deals(request):
+    """view to return products tagged as deals"""
+    deal = Product.objects.filter(deal=True)
+    template = 'product/product_deal.html'
+    context = {'deal': deal}
+    return render(request, template, context)
