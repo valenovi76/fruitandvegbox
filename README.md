@@ -113,6 +113,7 @@ Wireframing for this project has been done using [Balsamiq.cloud](https://balsam
 
 * Base Template:
 
+
 The base.html parent template contains all the default components for each child template to inherit from, availing of the template extending Django capibility.
 A structure based on the use of blocks has been implemented throught the projects, where possible.
   ```html
@@ -133,7 +134,8 @@ The navbar uses Bootstrap and the jQuery & Popper.js library to ensure it stays 
 ***
 
  * Home (Index) Page:
-	
+
+![site](media/wireframes/Index.png)
    The home (Index) page is the landing page and offers 3 options
 	 *  Shop Now , which brings to the All products page
 	 * Subscribe to the newsletter, which brings to the 		Subscription form
@@ -147,7 +149,7 @@ It also ensures site's Admin user can  select  appropriate options from the My P
 ***
 
 * Products (all, categories, offers):
-
+![site](media/wireframes/All%20Products_ByCategories_Deals.png)
  This template showcases the products on sale on the website. Through a filter on the category of the products or on the deal tagging (queriyng the product datamodel) it is possible retrieve data according to the filter criteria
  
  The Products are rendered via Bootstrap data cards and offer details such as price, name and description if available.
@@ -157,7 +159,7 @@ It also ensures site's Admin user can  select  appropriate options from the My P
 ***
 
 * Product Management:
-
+![site](media/wireframes/Product%20Admin%20page.png)
    The Product Management template contains a form mimicking the Product model structure and allows admin users only to updated or delete products
    
 ***
@@ -178,18 +180,18 @@ It also ensures site's Admin user can  select  appropriate options from the My P
 ***
 
 * Profile Template:
-
+![site](media/wireframes/profile.png)
    The Profile template shows the information about the logged user, as collated at the registration step and allows the user to update them if needed.  On the right side of the form there is a list of all the orders completed by the user, which can be further inspected clicking on the order number hyplerlink.
 ***
    
  * Shopping Bag Template:
-
+![site](media/wireframes/Shopping%20bag%20.png)
  The cart template is accessible to registered and guest users alike, thus ensuring that customers who are testing our service won't be discouraged by the need of becoming members.
  The cart dispalyes the products purchsased so far, the total of the prices (iterating through the order line itmes and adding the total per line), the possible discount, the delivery charge and the Grand Total. If it is empty and the user navigates to this template, some helpful short text is displayed to the user detailing same. 
  ***
 
  * Checkout Template:
-
+![site](media/wireframes/Checkout.png)
  The checkout template is only accessible to all user,  if a Cart has had an item added to it and  if the user has selected to Checkout. It will  display a form containing the order details as well as the amount to be paid, and a form to collate the relevant information to ensure a successful payment : customer details and delivery details.
    It will also give the user the option to 
 
@@ -210,14 +212,14 @@ Two simple forms where upon entering his email and pressing the button the user 
 ***
 
 * Newsletter List Template:
-
+![site](media/wireframes/Newsletter%20List%20.png)
 The template, accessible only by admin users, displays a table populated with the list of all the Newsletters created and kept within the app.
 From the table the user can preview the newsletter (read only form), access the Edit Newsletter page or Delete the entry.
 A paginator on the bottom of the form ensures the list won't grow too long. The number of entries to be grouped and displayed can be amended changing the number of pages to be displayed at the def control_newsletter_list in the paginator = Paginator(newsletters, x) variable
 ***
 
 * New Newsletter/Edit Newsletter Templates:
-
+![site](media/wireframes/New%20Newsletter%20.png)
 This template allows the user to enter the mandatory information for a valid newsletter, using a crispy form and the mandatory fields tags.
    Using the status dropdown it also triggers the sending email routine for the selected recipient, thus avoiding mass emailing
    
@@ -252,7 +254,7 @@ href="https://github.com/auxfuse/Milestone1">Github</a> ~ Used to host the repos
 * <a href="https://stackedit.io/">StackEdit</a> ~ Used to write ReadMe.
 
 ## Database
-
+![site](media/wireframes/DB_Schema.png)
 The database used for this Project was Postgres, as an Installed add-on to the deployed Heroku Application. Sqlite3 was used as local environment database until pretty much the very end, when I decided to implement some changes and forked the project.
 
 When each app and its models were created and implemented, `python manage.py makemigrations` was run in the terminal to create the initial model package and `python manage.py migrate` was then used to apply the model to the database and create the table.
